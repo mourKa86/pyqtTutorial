@@ -37,6 +37,9 @@
     </property>
     <item alignment="Qt::AlignTop">
      <widget class="QFrame" name="header_frame">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(36, 55, 76);</string>
+      </property>
       <property name="frameShape">
        <enum>QFrame::NoFrame</enum>
       </property>
@@ -95,7 +98,7 @@
             </property>
             <property name="icon">
              <iconset resource="icons.qrc">
-              <normaloff>:/icons/icons/align-left.svg</normaloff>:/icons/icons/align-left.svg</iconset>
+              <normaloff>:/icons/icons/white/align-left.svg</normaloff>:/icons/icons/white/align-left.svg</iconset>
             </property>
             <property name="iconSize">
              <size>
@@ -128,7 +131,7 @@
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="icons.qrc">:/icons/icons/airplay.svg</pixmap>
+             <pixmap resource="icons.qrc">:/icons/icons/white/airplay.svg</pixmap>
             </property>
            </widget>
           </item>
@@ -181,7 +184,7 @@
              <string/>
             </property>
             <property name="icon">
-             <iconset resource="icons.qrc">
+             <iconset>
               <normaloff>:/icons/icons/minus.svg</normaloff>:/icons/icons/minus.svg</iconset>
             </property>
            </widget>
@@ -192,7 +195,7 @@
              <string/>
             </property>
             <property name="icon">
-             <iconset resource="icons.qrc">
+             <iconset>
               <normaloff>:/icons/icons/maximize-2.svg</normaloff>:/icons/icons/maximize-2.svg</iconset>
             </property>
            </widget>
@@ -203,7 +206,7 @@
              <string/>
             </property>
             <property name="icon">
-             <iconset resource="icons.qrc">
+             <iconset>
               <normaloff>:/icons/icons/x.svg</normaloff>:/icons/icons/x.svg</iconset>
             </property>
            </widget>
@@ -248,7 +251,7 @@
         <widget class="QFrame" name="leftMenuCont_frame">
          <property name="minimumSize">
           <size>
-           <width>40</width>
+           <width>50</width>
            <height>0</height>
           </size>
          </property>
@@ -259,7 +262,7 @@
           </size>
          </property>
          <property name="styleSheet">
-          <string notr="true"/>
+          <string notr="true">background-color: rgb(36, 55, 76);</string>
          </property>
          <property name="frameShape">
           <enum>QFrame::StyledPanel</enum>
@@ -290,6 +293,9 @@
               <width>200</width>
               <height>0</height>
              </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true"/>
             </property>
             <property name="frameShape">
              <enum>QFrame::StyledPanel</enum>
@@ -325,7 +331,7 @@
                </property>
                <property name="icon">
                 <iconset resource="icons.qrc">
-                 <normaloff>:/icons/icons/activity.svg</normaloff>:/icons/icons/activity.svg</iconset>
+                 <normaloff>:/icons/icons/white/activity.svg</normaloff>:/icons/icons/white/activity.svg</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -347,7 +353,7 @@
                </property>
                <property name="icon">
                 <iconset resource="icons.qrc">
-                 <normaloff>:/icons/icons/disc.svg</normaloff>:/icons/icons/disc.svg</iconset>
+                 <normaloff>:/icons/icons/white/disc.svg</normaloff>:/icons/icons/white/disc.svg</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -369,7 +375,7 @@
                </property>
                <property name="icon">
                 <iconset resource="icons.qrc">
-                 <normaloff>:/icons/icons/thermometer.svg</normaloff>:/icons/icons/thermometer.svg</iconset>
+                 <normaloff>:/icons/icons/white/thermometer.svg</normaloff>:/icons/icons/white/thermometer.svg</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -391,7 +397,7 @@
                </property>
                <property name="icon">
                 <iconset resource="icons.qrc">
-                 <normaloff>:/icons/icons/battery-charging.svg</normaloff>:/icons/icons/battery-charging.svg</iconset>
+                 <normaloff>:/icons/icons/white/battery-charging.svg</normaloff>:/icons/icons/white/battery-charging.svg</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -416,7 +422,7 @@
                </property>
                <property name="icon">
                 <iconset resource="icons.qrc">
-                 <normaloff>:/icons/icons/cpu.svg</normaloff>:/icons/icons/cpu.svg</iconset>
+                 <normaloff>:/icons/icons/white/cpu.svg</normaloff>:/icons/icons/white/cpu.svg</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -453,7 +459,7 @@
                </property>
                <property name="icon">
                 <iconset resource="icons.qrc">
-                 <normaloff>:/icons/icons/monitor.svg</normaloff>:/icons/icons/monitor.svg</iconset>
+                 <normaloff>:/icons/icons/white/monitor.svg</normaloff>:/icons/icons/white/monitor.svg</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -475,7 +481,7 @@
                </property>
                <property name="icon">
                 <iconset resource="icons.qrc">
-                 <normaloff>:/icons/icons/wifi.svg</normaloff>:/icons/icons/wifi.svg</iconset>
+                 <normaloff>:/icons/icons/white/wifi.svg</normaloff>:/icons/icons/white/wifi.svg</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -1279,7 +1285,7 @@
                        <string/>
                       </property>
                       <property name="icon">
-                       <iconset resource="icons.qrc">
+                       <iconset>
                         <normaloff>:/icons/icons/search.svg</normaloff>:/icons/icons/search.svg</iconset>
                       </property>
                       <property name="iconSize">
@@ -1603,7 +1609,7 @@
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>1010</width>
+                   <width>208</width>
                    <height>568</height>
                   </rect>
                  </property>
@@ -2049,12 +2055,56 @@
        </item>
        <item>
         <widget class="QFrame" name="rightCont_frame">
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(36, 55, 76);</string>
+         </property>
          <property name="frameShape">
           <enum>QFrame::StyledPanel</enum>
          </property>
          <property name="frameShadow">
           <enum>QFrame::Raised</enum>
          </property>
+         <layout class="QVBoxLayout" name="verticalLayout_32">
+          <item alignment="Qt::AlignTop">
+           <widget class="QFrame" name="frame_2">
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Raised</enum>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_33">
+             <item alignment="Qt::AlignTop">
+              <widget class="QLabel" name="label">
+               <property name="font">
+                <font>
+                 <pointsize>12</pointsize>
+                 <weight>75</weight>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="text">
+                <string>About</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="label_2">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="text">
+                <string>More information to be added</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
         </widget>
        </item>
       </layout>

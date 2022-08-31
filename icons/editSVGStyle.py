@@ -10,9 +10,12 @@ def editSVGStyle(iconsPath):
 
         fin = open(svg_path, "rt")
         data = fin.read()
-        data = data.replace('stroke="fill:"white"\n','stroke="white"\n')
+        data = data.replace('stroke="currentColor"','stroke="white"')
         fin.close()
 
         fin = open(svg_path, "wt")
         fin.write(data)
         fin.close()
+
+
+editSVGStyle('white\\')

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'mainWindow.ui'
+## Form generated from reading UI file 'MainWindow.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.2.1
 ##
@@ -37,6 +37,7 @@ class Ui_MainWindow(object):
         self.verticalLayout.setContentsMargins(0, 0, 0, 0)
         self.header_frame = QFrame(self.centralwidget)
         self.header_frame.setObjectName(u"header_frame")
+        self.header_frame.setStyleSheet(u"background-color: rgb(36, 55, 76);")
         self.header_frame.setFrameShape(QFrame.NoFrame)
         self.header_frame.setFrameShadow(QFrame.Raised)
         self.horizontalLayout = QHBoxLayout(self.header_frame)
@@ -57,7 +58,7 @@ class Ui_MainWindow(object):
         font.setPointSize(10)
         self.menu_btn.setFont(font)
         icon = QIcon()
-        icon.addFile(u":/icons/icons/align-left.svg", QSize(), QIcon.Normal, QIcon.Off)
+        icon.addFile(u":/icons/icons/white/align-left.svg", QSize(), QIcon.Normal, QIcon.Off)
         self.menu_btn.setIcon(icon)
         self.menu_btn.setIconSize(QSize(32, 32))
 
@@ -75,7 +76,7 @@ class Ui_MainWindow(object):
         self.mainWindowIcon_lbl = QLabel(self.headerCenter_frame)
         self.mainWindowIcon_lbl.setObjectName(u"mainWindowIcon_lbl")
         self.mainWindowIcon_lbl.setFont(font)
-        self.mainWindowIcon_lbl.setPixmap(QPixmap(u":/icons/icons/airplay.svg"))
+        self.mainWindowIcon_lbl.setPixmap(QPixmap(u":/icons/icons/white/airplay.svg"))
 
         self.horizontalLayout_3.addWidget(self.mainWindowIcon_lbl, 0, Qt.AlignRight)
 
@@ -146,9 +147,9 @@ class Ui_MainWindow(object):
         self.horizontalLayout_8.setContentsMargins(0, 0, 0, 0)
         self.leftMenuCont_frame = QFrame(self.mainBody_frame)
         self.leftMenuCont_frame.setObjectName(u"leftMenuCont_frame")
-        self.leftMenuCont_frame.setMinimumSize(QSize(40, 0))
+        self.leftMenuCont_frame.setMinimumSize(QSize(50, 0))
         self.leftMenuCont_frame.setMaximumSize(QSize(20, 16777215))
-        self.leftMenuCont_frame.setStyleSheet(u"")
+        self.leftMenuCont_frame.setStyleSheet(u"background-color: rgb(36, 55, 76);")
         self.leftMenuCont_frame.setFrameShape(QFrame.StyledPanel)
         self.leftMenuCont_frame.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_9 = QHBoxLayout(self.leftMenuCont_frame)
@@ -158,6 +159,7 @@ class Ui_MainWindow(object):
         self.menu_frame = QFrame(self.leftMenuCont_frame)
         self.menu_frame.setObjectName(u"menu_frame")
         self.menu_frame.setMinimumSize(QSize(200, 0))
+        self.menu_frame.setStyleSheet(u"")
         self.menu_frame.setFrameShape(QFrame.StyledPanel)
         self.menu_frame.setFrameShadow(QFrame.Raised)
         self.gridLayout = QGridLayout(self.menu_frame)
@@ -168,7 +170,7 @@ class Ui_MainWindow(object):
         self.activities_btn.setObjectName(u"activities_btn")
         self.activities_btn.setFont(font)
         icon4 = QIcon()
-        icon4.addFile(u":/icons/icons/activity.svg", QSize(), QIcon.Normal, QIcon.Off)
+        icon4.addFile(u":/icons/icons/white/activity.svg", QSize(), QIcon.Normal, QIcon.Off)
         self.activities_btn.setIcon(icon4)
         self.activities_btn.setIconSize(QSize(32, 32))
 
@@ -178,7 +180,7 @@ class Ui_MainWindow(object):
         self.storage_btn.setObjectName(u"storage_btn")
         self.storage_btn.setFont(font)
         icon5 = QIcon()
-        icon5.addFile(u":/icons/icons/disc.svg", QSize(), QIcon.Normal, QIcon.Off)
+        icon5.addFile(u":/icons/icons/white/disc.svg", QSize(), QIcon.Normal, QIcon.Off)
         self.storage_btn.setIcon(icon5)
         self.storage_btn.setIconSize(QSize(32, 32))
 
@@ -188,7 +190,7 @@ class Ui_MainWindow(object):
         self.sensors_btn.setObjectName(u"sensors_btn")
         self.sensors_btn.setFont(font)
         icon6 = QIcon()
-        icon6.addFile(u":/icons/icons/thermometer.svg", QSize(), QIcon.Normal, QIcon.Off)
+        icon6.addFile(u":/icons/icons/white/thermometer.svg", QSize(), QIcon.Normal, QIcon.Off)
         self.sensors_btn.setIcon(icon6)
         self.sensors_btn.setIconSize(QSize(32, 32))
 
@@ -198,7 +200,7 @@ class Ui_MainWindow(object):
         self.battery_btn.setObjectName(u"battery_btn")
         self.battery_btn.setFont(font)
         icon7 = QIcon()
-        icon7.addFile(u":/icons/icons/battery-charging.svg", QSize(), QIcon.Normal, QIcon.Off)
+        icon7.addFile(u":/icons/icons/white/battery-charging.svg", QSize(), QIcon.Normal, QIcon.Off)
         self.battery_btn.setIcon(icon7)
         self.battery_btn.setIconSize(QSize(32, 32))
 
@@ -209,7 +211,7 @@ class Ui_MainWindow(object):
         self.cpu_btn.setFont(font)
         self.cpu_btn.setStyleSheet(u"")
         icon8 = QIcon()
-        icon8.addFile(u":/icons/icons/cpu.svg", QSize(), QIcon.Normal, QIcon.Off)
+        icon8.addFile(u":/icons/icons/white/cpu.svg", QSize(), QIcon.Normal, QIcon.Off)
         self.cpu_btn.setIcon(icon8)
         self.cpu_btn.setIconSize(QSize(32, 32))
 
@@ -226,7 +228,7 @@ class Ui_MainWindow(object):
         self.sysInfo_btn.setObjectName(u"sysInfo_btn")
         self.sysInfo_btn.setFont(font)
         icon9 = QIcon()
-        icon9.addFile(u":/icons/icons/monitor.svg", QSize(), QIcon.Normal, QIcon.Off)
+        icon9.addFile(u":/icons/icons/white/monitor.svg", QSize(), QIcon.Normal, QIcon.Off)
         self.sysInfo_btn.setIcon(icon9)
         self.sysInfo_btn.setIconSize(QSize(32, 32))
 
@@ -236,7 +238,7 @@ class Ui_MainWindow(object):
         self.networks_btn.setObjectName(u"networks_btn")
         self.networks_btn.setFont(font)
         icon10 = QIcon()
-        icon10.addFile(u":/icons/icons/wifi.svg", QSize(), QIcon.Normal, QIcon.Off)
+        icon10.addFile(u":/icons/icons/white/wifi.svg", QSize(), QIcon.Normal, QIcon.Off)
         self.networks_btn.setIcon(icon10)
         self.networks_btn.setIconSize(QSize(32, 32))
 
@@ -847,7 +849,7 @@ class Ui_MainWindow(object):
         self.networks_scroll.setWidgetResizable(True)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 1010, 568))
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 208, 568))
         self.verticalLayout_30 = QVBoxLayout(self.scrollAreaWidgetContents)
         self.verticalLayout_30.setSpacing(0)
         self.verticalLayout_30.setObjectName(u"verticalLayout_30")
@@ -1096,8 +1098,33 @@ class Ui_MainWindow(object):
 
         self.rightCont_frame = QFrame(self.mainBody_frame)
         self.rightCont_frame.setObjectName(u"rightCont_frame")
+        self.rightCont_frame.setStyleSheet(u"background-color: rgb(36, 55, 76);")
         self.rightCont_frame.setFrameShape(QFrame.StyledPanel)
         self.rightCont_frame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_32 = QVBoxLayout(self.rightCont_frame)
+        self.verticalLayout_32.setObjectName(u"verticalLayout_32")
+        self.frame_2 = QFrame(self.rightCont_frame)
+        self.frame_2.setObjectName(u"frame_2")
+        self.frame_2.setFrameShape(QFrame.StyledPanel)
+        self.frame_2.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_33 = QVBoxLayout(self.frame_2)
+        self.verticalLayout_33.setObjectName(u"verticalLayout_33")
+        self.label = QLabel(self.frame_2)
+        self.label.setObjectName(u"label")
+        self.label.setFont(font2)
+
+        self.verticalLayout_33.addWidget(self.label, 0, Qt.AlignTop)
+
+        self.label_2 = QLabel(self.frame_2)
+        self.label_2.setObjectName(u"label_2")
+        sizePolicy.setHeightForWidth(self.label_2.sizePolicy().hasHeightForWidth())
+        self.label_2.setSizePolicy(sizePolicy)
+
+        self.verticalLayout_33.addWidget(self.label_2)
+
+
+        self.verticalLayout_32.addWidget(self.frame_2, 0, Qt.AlignTop)
+
 
         self.horizontalLayout_8.addWidget(self.rightCont_frame)
 
@@ -1327,6 +1354,8 @@ class Ui_MainWindow(object):
         ___qtablewidgetitem45.setText(QCoreApplication.translate("MainWindow", u"STATUS", None));
         ___qtablewidgetitem46 = self.networkConnectionsTable.horizontalHeaderItem(6)
         ___qtablewidgetitem46.setText(QCoreApplication.translate("MainWindow", u"PID", None));
+        self.label.setText(QCoreApplication.translate("MainWindow", u"About", None))
+        self.label_2.setText(QCoreApplication.translate("MainWindow", u"More information to be added", None))
         self.footerVersion_lbl.setText(QCoreApplication.translate("MainWindow", u"Version 1.0 | Copyright Spinn Co.", None))
         self.footerHelp_btn.setText(QCoreApplication.translate("MainWindow", u"?", None))
     # retranslateUi
