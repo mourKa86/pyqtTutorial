@@ -164,7 +164,7 @@
          </property>
          <layout class="QHBoxLayout" name="horizontalLayout_2">
           <property name="spacing">
-           <number>10</number>
+           <number>5</number>
           </property>
           <property name="leftMargin">
            <number>0</number>
@@ -184,8 +184,8 @@
              <string/>
             </property>
             <property name="icon">
-             <iconset>
-              <normaloff>:/icons/icons/minus.svg</normaloff>:/icons/icons/minus.svg</iconset>
+             <iconset resource="icons.qrc">
+              <normaloff>:/icons/icons/white/minus.svg</normaloff>:/icons/icons/white/minus.svg</iconset>
             </property>
            </widget>
           </item>
@@ -195,8 +195,8 @@
              <string/>
             </property>
             <property name="icon">
-             <iconset>
-              <normaloff>:/icons/icons/maximize-2.svg</normaloff>:/icons/icons/maximize-2.svg</iconset>
+             <iconset resource="icons.qrc">
+              <normaloff>:/icons/icons/white/maximize-2.svg</normaloff>:/icons/icons/white/maximize-2.svg</iconset>
             </property>
            </widget>
           </item>
@@ -206,8 +206,8 @@
              <string/>
             </property>
             <property name="icon">
-             <iconset>
-              <normaloff>:/icons/icons/x.svg</normaloff>:/icons/icons/x.svg</iconset>
+             <iconset resource="icons.qrc">
+              <normaloff>:/icons/icons/white/x.svg</normaloff>:/icons/icons/white/x.svg</iconset>
             </property>
            </widget>
           </item>

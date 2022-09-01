@@ -99,13 +99,13 @@ class Ui_MainWindow(object):
         self.headerRight_frame.setFrameShape(QFrame.StyledPanel)
         self.headerRight_frame.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_2 = QHBoxLayout(self.headerRight_frame)
-        self.horizontalLayout_2.setSpacing(10)
+        self.horizontalLayout_2.setSpacing(5)
         self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
         self.horizontalLayout_2.setContentsMargins(0, 0, 0, 0)
         self.minimizeWindow_btn = QPushButton(self.headerRight_frame)
         self.minimizeWindow_btn.setObjectName(u"minimizeWindow_btn")
         icon1 = QIcon()
-        icon1.addFile(u":/icons/icons/minus.svg", QSize(), QIcon.Normal, QIcon.Off)
+        icon1.addFile(u":/icons/icons/white/minus.svg", QSize(), QIcon.Normal, QIcon.Off)
         self.minimizeWindow_btn.setIcon(icon1)
 
         self.horizontalLayout_2.addWidget(self.minimizeWindow_btn)
@@ -113,7 +113,7 @@ class Ui_MainWindow(object):
         self.maximizeWindow_btn = QPushButton(self.headerRight_frame)
         self.maximizeWindow_btn.setObjectName(u"maximizeWindow_btn")
         icon2 = QIcon()
-        icon2.addFile(u":/icons/icons/maximize-2.svg", QSize(), QIcon.Normal, QIcon.Off)
+        icon2.addFile(u":/icons/icons/white/maximize-2.svg", QSize(), QIcon.Normal, QIcon.Off)
         self.maximizeWindow_btn.setIcon(icon2)
 
         self.horizontalLayout_2.addWidget(self.maximizeWindow_btn)
@@ -121,7 +121,7 @@ class Ui_MainWindow(object):
         self.closeWindow_btn = QPushButton(self.headerRight_frame)
         self.closeWindow_btn.setObjectName(u"closeWindow_btn")
         icon3 = QIcon()
-        icon3.addFile(u":/icons/icons/x.svg", QSize(), QIcon.Normal, QIcon.Off)
+        icon3.addFile(u":/icons/icons/white/x.svg", QSize(), QIcon.Normal, QIcon.Off)
         self.closeWindow_btn.setIcon(icon3)
 
         self.horizontalLayout_2.addWidget(self.closeWindow_btn)
