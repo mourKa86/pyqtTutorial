@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1113</width>
-    <height>600</height>
+    <height>646</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -62,8 +62,12 @@
        <property name="bottomMargin">
         <number>0</number>
        </property>
-       <item>
+       <item alignment="Qt::AlignLeft">
         <widget class="QFrame" name="headerLeft_frame">
+         <property name="styleSheet">
+          <string notr="true">padding:0;
+margin:0;</string>
+         </property>
          <property name="frameShape">
           <enum>QFrame::StyledPanel</enum>
          </property>
@@ -92,6 +96,9 @@
              <font>
               <pointsize>10</pointsize>
              </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">margin:0;</string>
             </property>
             <property name="text">
              <string>Menu</string>
@@ -251,7 +258,7 @@
         <widget class="QFrame" name="leftMenuCont_frame">
          <property name="minimumSize">
           <size>
-           <width>50</width>
+           <width>60</width>
            <height>0</height>
           </size>
          </property>
@@ -641,20 +648,9 @@
                  <enum>QFrame::Raised</enum>
                 </property>
                 <layout class="QGridLayout" name="gridLayout_2">
-                 <item row="2" column="0">
-                  <widget class="QLabel" name="cpuMainCore_lbl">
-                   <property name="font">
-                    <font>
-                     <pointsize>10</pointsize>
-                     <weight>75</weight>
-                     <bold>true</bold>
-                    </font>
-                   </property>
-                   <property name="text">
-                    <string>CPU Main Core </string>
-                   </property>
-                  </widget>
-                 </item>
+                 <property name="rightMargin">
+                  <number>9</number>
+                 </property>
                  <item row="0" column="0">
                   <widget class="QLabel" name="cpuCount_lbl">
                    <property name="font">
@@ -681,8 +677,22 @@
                    </property>
                   </widget>
                  </item>
-                 <item row="0" column="1">
-                  <widget class="QLabel" name="cpuCountVal_lbl">
+                 <item row="2" column="0">
+                  <widget class="QLabel" name="cpuMainCore_lbl">
+                   <property name="font">
+                    <font>
+                     <pointsize>10</pointsize>
+                     <weight>75</weight>
+                     <bold>true</bold>
+                    </font>
+                   </property>
+                   <property name="text">
+                    <string>CPU Main Core </string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="1">
+                  <widget class="QLabel" name="cpuPerVal_lbl">
                    <property name="font">
                     <font>
                      <pointsize>10</pointsize>
@@ -707,8 +717,8 @@
                    </property>
                   </widget>
                  </item>
-                 <item row="1" column="1">
-                  <widget class="QLabel" name="cpuPerVal_lbl">
+                 <item row="0" column="1">
+                  <widget class="QLabel" name="cpuCountVal_lbl">
                    <property name="font">
                     <font>
                      <pointsize>10</pointsize>
@@ -716,6 +726,16 @@
                    </property>
                    <property name="text">
                     <string>N/A</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="2" rowspan="3">
+                  <widget class="QWidget" name="cpuMonitor_widget" native="true">
+                   <property name="minimumSize">
+                    <size>
+                     <width>150</width>
+                     <height>150</height>
+                    </size>
                    </property>
                   </widget>
                  </item>
@@ -737,7 +757,10 @@
                  <enum>QFrame::Raised</enum>
                 </property>
                 <layout class="QGridLayout" name="gridLayout_3">
-                 <item row="0" column="0">
+                 <property name="rightMargin">
+                  <number>9</number>
+                 </property>
+                 <item row="0" column="1">
                   <widget class="QLabel" name="totalRam_lbl">
                    <property name="font">
                     <font>
@@ -751,7 +774,7 @@
                    </property>
                   </widget>
                  </item>
-                 <item row="0" column="1">
+                 <item row="0" column="3">
                   <widget class="QLabel" name="totalRamVal_lbl">
                    <property name="font">
                     <font>
@@ -763,22 +786,8 @@
                    </property>
                   </widget>
                  </item>
-                 <item row="1" column="0">
-                  <widget class="QLabel" name="availableMem_lbl">
-                   <property name="font">
-                    <font>
-                     <pointsize>10</pointsize>
-                     <weight>75</weight>
-                     <bold>true</bold>
-                    </font>
-                   </property>
-                   <property name="text">
-                    <string>Available Ram</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="1" column="1">
-                  <widget class="QLabel" name="availableMemVal_lbl">
+                 <item row="3" column="3">
+                  <widget class="QLabel" name="freeRamVal_lbl">
                    <property name="font">
                     <font>
                      <pointsize>10</pointsize>
@@ -789,7 +798,7 @@
                    </property>
                   </widget>
                  </item>
-                 <item row="2" column="0">
+                 <item row="2" column="1">
                   <widget class="QLabel" name="usedRam_lbl">
                    <property name="font">
                     <font>
@@ -803,19 +812,21 @@
                    </property>
                   </widget>
                  </item>
-                 <item row="2" column="1">
-                  <widget class="QLabel" name="usedRamVal_lbl">
+                 <item row="1" column="1">
+                  <widget class="QLabel" name="availableMem_lbl">
                    <property name="font">
                     <font>
                      <pointsize>10</pointsize>
+                     <weight>75</weight>
+                     <bold>true</bold>
                     </font>
                    </property>
                    <property name="text">
-                    <string>N/A</string>
+                    <string>Available Ram</string>
                    </property>
                   </widget>
                  </item>
-                 <item row="3" column="0">
+                 <item row="3" column="1">
                   <widget class="QLabel" name="freeRam_lbl">
                    <property name="font">
                     <font>
@@ -829,8 +840,8 @@
                    </property>
                   </widget>
                  </item>
-                 <item row="3" column="1">
-                  <widget class="QLabel" name="freeRamVal_lbl">
+                 <item row="1" column="3">
+                  <widget class="QLabel" name="availableMemVal_lbl">
                    <property name="font">
                     <font>
                      <pointsize>10</pointsize>
@@ -841,7 +852,7 @@
                    </property>
                   </widget>
                  </item>
-                 <item row="4" column="0">
+                 <item row="4" column="1">
                   <widget class="QLabel" name="ramUsage_lbl">
                    <property name="font">
                     <font>
@@ -855,7 +866,19 @@
                    </property>
                   </widget>
                  </item>
-                 <item row="4" column="1">
+                 <item row="2" column="3">
+                  <widget class="QLabel" name="usedRamVal_lbl">
+                   <property name="font">
+                    <font>
+                     <pointsize>10</pointsize>
+                    </font>
+                   </property>
+                   <property name="text">
+                    <string>N/A</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="4" column="3">
                   <widget class="QLabel" name="ramUsageVal_lbl">
                    <property name="font">
                     <font>
@@ -864,6 +887,16 @@
                    </property>
                    <property name="text">
                     <string>N/A</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="4" rowspan="5">
+                  <widget class="QWidget" name="ramMonitor_widget" native="true">
+                   <property name="minimumSize">
+                    <size>
+                     <width>150</width>
+                     <height>150</height>
+                    </size>
                    </property>
                   </widget>
                  </item>
@@ -1285,8 +1318,8 @@
                        <string/>
                       </property>
                       <property name="icon">
-                       <iconset>
-                        <normaloff>:/icons/icons/search.svg</normaloff>:/icons/icons/search.svg</iconset>
+                       <iconset resource="icons.qrc">
+                        <normaloff>:/icons/icons/white/search.svg</normaloff>:/icons/icons/white/search.svg</iconset>
                       </property>
                       <property name="iconSize">
                        <size>
@@ -2066,7 +2099,7 @@
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_32">
           <item alignment="Qt::AlignTop">
-           <widget class="QFrame" name="frame_2">
+           <widget class="QFrame" name="about_frame">
             <property name="frameShape">
              <enum>QFrame::StyledPanel</enum>
             </property>
@@ -2075,7 +2108,7 @@
             </property>
             <layout class="QVBoxLayout" name="verticalLayout_33">
              <item alignment="Qt::AlignTop">
-              <widget class="QLabel" name="label">
+              <widget class="QLabel" name="aboutTitle_lbl">
                <property name="font">
                 <font>
                  <pointsize>12</pointsize>
@@ -2089,7 +2122,7 @@
               </widget>
              </item>
              <item>
-              <widget class="QLabel" name="label_2">
+              <widget class="QLabel" name="aboutDesc_lbl">
                <property name="sizePolicy">
                 <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
                  <horstretch>0</horstretch>

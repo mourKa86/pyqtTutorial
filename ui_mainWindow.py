@@ -25,7 +25,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(1113, 600)
+        MainWindow.resize(1113, 646)
         MainWindow.setStyleSheet(u"*{\n"
 "	border:none;\n"
 "}")
@@ -46,6 +46,8 @@ class Ui_MainWindow(object):
         self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
         self.headerLeft_frame = QFrame(self.header_frame)
         self.headerLeft_frame.setObjectName(u"headerLeft_frame")
+        self.headerLeft_frame.setStyleSheet(u"padding:0;\n"
+"margin:0;")
         self.headerLeft_frame.setFrameShape(QFrame.StyledPanel)
         self.headerLeft_frame.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_4 = QHBoxLayout(self.headerLeft_frame)
@@ -57,6 +59,7 @@ class Ui_MainWindow(object):
         font = QFont()
         font.setPointSize(10)
         self.menu_btn.setFont(font)
+        self.menu_btn.setStyleSheet(u"margin:0;")
         icon = QIcon()
         icon.addFile(u":/icons/icons/white/align-left.svg", QSize(), QIcon.Normal, QIcon.Off)
         self.menu_btn.setIcon(icon)
@@ -65,7 +68,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_4.addWidget(self.menu_btn, 0, Qt.AlignLeft)
 
 
-        self.horizontalLayout.addWidget(self.headerLeft_frame)
+        self.horizontalLayout.addWidget(self.headerLeft_frame, 0, Qt.AlignLeft)
 
         self.headerCenter_frame = QFrame(self.header_frame)
         self.headerCenter_frame.setObjectName(u"headerCenter_frame")
@@ -147,7 +150,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_8.setContentsMargins(0, 0, 0, 0)
         self.leftMenuCont_frame = QFrame(self.mainBody_frame)
         self.leftMenuCont_frame.setObjectName(u"leftMenuCont_frame")
-        self.leftMenuCont_frame.setMinimumSize(QSize(50, 0))
+        self.leftMenuCont_frame.setMinimumSize(QSize(60, 0))
         self.leftMenuCont_frame.setMaximumSize(QSize(20, 16777215))
         self.leftMenuCont_frame.setStyleSheet(u"background-color: rgb(36, 55, 76);")
         self.leftMenuCont_frame.setFrameShape(QFrame.StyledPanel)
@@ -330,17 +333,12 @@ class Ui_MainWindow(object):
         self.cpu_frame.setFrameShadow(QFrame.Raised)
         self.gridLayout_2 = QGridLayout(self.cpu_frame)
         self.gridLayout_2.setObjectName(u"gridLayout_2")
-        self.cpuMainCore_lbl = QLabel(self.cpu_frame)
-        self.cpuMainCore_lbl.setObjectName(u"cpuMainCore_lbl")
+        self.gridLayout_2.setContentsMargins(-1, -1, 9, -1)
+        self.cpuCount_lbl = QLabel(self.cpu_frame)
+        self.cpuCount_lbl.setObjectName(u"cpuCount_lbl")
         font3 = QFont()
         font3.setPointSize(10)
         font3.setBold(True)
-        self.cpuMainCore_lbl.setFont(font3)
-
-        self.gridLayout_2.addWidget(self.cpuMainCore_lbl, 2, 0, 1, 1)
-
-        self.cpuCount_lbl = QLabel(self.cpu_frame)
-        self.cpuCount_lbl.setObjectName(u"cpuCount_lbl")
         self.cpuCount_lbl.setFont(font3)
 
         self.gridLayout_2.addWidget(self.cpuCount_lbl, 0, 0, 1, 1)
@@ -351,11 +349,17 @@ class Ui_MainWindow(object):
 
         self.gridLayout_2.addWidget(self.cpuMainCoreVal_lbl, 2, 1, 1, 1)
 
-        self.cpuCountVal_lbl = QLabel(self.cpu_frame)
-        self.cpuCountVal_lbl.setObjectName(u"cpuCountVal_lbl")
-        self.cpuCountVal_lbl.setFont(font)
+        self.cpuPerVal_lbl = QLabel(self.cpu_frame)
+        self.cpuPerVal_lbl.setObjectName(u"cpuPerVal_lbl")
+        self.cpuPerVal_lbl.setFont(font)
 
-        self.gridLayout_2.addWidget(self.cpuCountVal_lbl, 0, 1, 1, 1)
+        self.gridLayout_2.addWidget(self.cpuPerVal_lbl, 1, 1, 1, 1)
+
+        self.cpuMainCore_lbl = QLabel(self.cpu_frame)
+        self.cpuMainCore_lbl.setObjectName(u"cpuMainCore_lbl")
+        self.cpuMainCore_lbl.setFont(font3)
+
+        self.gridLayout_2.addWidget(self.cpuMainCore_lbl, 2, 0, 1, 1)
 
         self.cpuPer_lbl = QLabel(self.cpu_frame)
         self.cpuPer_lbl.setObjectName(u"cpuPer_lbl")
@@ -363,11 +367,11 @@ class Ui_MainWindow(object):
 
         self.gridLayout_2.addWidget(self.cpuPer_lbl, 1, 0, 1, 1)
 
-        self.cpuPerVal_lbl = QLabel(self.cpu_frame)
-        self.cpuPerVal_lbl.setObjectName(u"cpuPerVal_lbl")
-        self.cpuPerVal_lbl.setFont(font)
+        self.cpuCountVal_lbl = QLabel(self.cpu_frame)
+        self.cpuCountVal_lbl.setObjectName(u"cpuCountVal_lbl")
+        self.cpuCountVal_lbl.setFont(font)
 
-        self.gridLayout_2.addWidget(self.cpuPerVal_lbl, 1, 1, 1, 1)
+        self.gridLayout_2.addWidget(self.cpuCountVal_lbl, 0, 1, 1, 1)
 
 
         self.verticalLayout_3.addWidget(self.cpu_frame)
@@ -380,65 +384,66 @@ class Ui_MainWindow(object):
         self.memory_frame.setFrameShadow(QFrame.Raised)
         self.gridLayout_3 = QGridLayout(self.memory_frame)
         self.gridLayout_3.setObjectName(u"gridLayout_3")
-        self.totalRam_lbl = QLabel(self.memory_frame)
-        self.totalRam_lbl.setObjectName(u"totalRam_lbl")
-        self.totalRam_lbl.setFont(font3)
-
-        self.gridLayout_3.addWidget(self.totalRam_lbl, 0, 0, 1, 1)
-
-        self.totalRamVal_lbl = QLabel(self.memory_frame)
-        self.totalRamVal_lbl.setObjectName(u"totalRamVal_lbl")
-        self.totalRamVal_lbl.setFont(font)
-
-        self.gridLayout_3.addWidget(self.totalRamVal_lbl, 0, 1, 1, 1)
-
-        self.availableMem_lbl = QLabel(self.memory_frame)
-        self.availableMem_lbl.setObjectName(u"availableMem_lbl")
-        self.availableMem_lbl.setFont(font3)
-
-        self.gridLayout_3.addWidget(self.availableMem_lbl, 1, 0, 1, 1)
-
-        self.availableMemVal_lbl = QLabel(self.memory_frame)
-        self.availableMemVal_lbl.setObjectName(u"availableMemVal_lbl")
-        self.availableMemVal_lbl.setFont(font)
-
-        self.gridLayout_3.addWidget(self.availableMemVal_lbl, 1, 1, 1, 1)
-
-        self.usedRam_lbl = QLabel(self.memory_frame)
-        self.usedRam_lbl.setObjectName(u"usedRam_lbl")
-        self.usedRam_lbl.setFont(font3)
-
-        self.gridLayout_3.addWidget(self.usedRam_lbl, 2, 0, 1, 1)
-
+        self.gridLayout_3.setContentsMargins(-1, -1, 9, -1)
         self.usedRamVal_lbl = QLabel(self.memory_frame)
         self.usedRamVal_lbl.setObjectName(u"usedRamVal_lbl")
         self.usedRamVal_lbl.setFont(font)
 
-        self.gridLayout_3.addWidget(self.usedRamVal_lbl, 2, 1, 1, 1)
-
-        self.freeRam_lbl = QLabel(self.memory_frame)
-        self.freeRam_lbl.setObjectName(u"freeRam_lbl")
-        self.freeRam_lbl.setFont(font3)
-
-        self.gridLayout_3.addWidget(self.freeRam_lbl, 3, 0, 1, 1)
-
-        self.freeRamVal_lbl = QLabel(self.memory_frame)
-        self.freeRamVal_lbl.setObjectName(u"freeRamVal_lbl")
-        self.freeRamVal_lbl.setFont(font)
-
-        self.gridLayout_3.addWidget(self.freeRamVal_lbl, 3, 1, 1, 1)
-
-        self.ramUsage_lbl = QLabel(self.memory_frame)
-        self.ramUsage_lbl.setObjectName(u"ramUsage_lbl")
-        self.ramUsage_lbl.setFont(font3)
-
-        self.gridLayout_3.addWidget(self.ramUsage_lbl, 4, 0, 1, 1)
+        self.gridLayout_3.addWidget(self.usedRamVal_lbl, 2, 3, 1, 1)
 
         self.ramUsageVal_lbl = QLabel(self.memory_frame)
         self.ramUsageVal_lbl.setObjectName(u"ramUsageVal_lbl")
         self.ramUsageVal_lbl.setFont(font)
 
-        self.gridLayout_3.addWidget(self.ramUsageVal_lbl, 4, 1, 1, 1)
+        self.gridLayout_3.addWidget(self.ramUsageVal_lbl, 4, 3, 1, 1)
+
+        self.totalRamVal_lbl = QLabel(self.memory_frame)
+        self.totalRamVal_lbl.setObjectName(u"totalRamVal_lbl")
+        self.totalRamVal_lbl.setFont(font)
+
+        self.gridLayout_3.addWidget(self.totalRamVal_lbl, 0, 3, 1, 1)
+
+        self.totalRam_lbl = QLabel(self.memory_frame)
+        self.totalRam_lbl.setObjectName(u"totalRam_lbl")
+        self.totalRam_lbl.setFont(font3)
+
+        self.gridLayout_3.addWidget(self.totalRam_lbl, 0, 1, 1, 1)
+
+        self.freeRamVal_lbl = QLabel(self.memory_frame)
+        self.freeRamVal_lbl.setObjectName(u"freeRamVal_lbl")
+        self.freeRamVal_lbl.setFont(font)
+
+        self.gridLayout_3.addWidget(self.freeRamVal_lbl, 3, 3, 1, 1)
+
+        self.usedRam_lbl = QLabel(self.memory_frame)
+        self.usedRam_lbl.setObjectName(u"usedRam_lbl")
+        self.usedRam_lbl.setFont(font3)
+
+        self.gridLayout_3.addWidget(self.usedRam_lbl, 2, 1, 1, 1)
+
+        self.availableMemVal_lbl = QLabel(self.memory_frame)
+        self.availableMemVal_lbl.setObjectName(u"availableMemVal_lbl")
+        self.availableMemVal_lbl.setFont(font)
+
+        self.gridLayout_3.addWidget(self.availableMemVal_lbl, 1, 3, 1, 1)
+
+        self.availableMem_lbl = QLabel(self.memory_frame)
+        self.availableMem_lbl.setObjectName(u"availableMem_lbl")
+        self.availableMem_lbl.setFont(font3)
+
+        self.gridLayout_3.addWidget(self.availableMem_lbl, 1, 1, 1, 1)
+
+        self.freeRam_lbl = QLabel(self.memory_frame)
+        self.freeRam_lbl.setObjectName(u"freeRam_lbl")
+        self.freeRam_lbl.setFont(font3)
+
+        self.gridLayout_3.addWidget(self.freeRam_lbl, 3, 1, 1, 1)
+
+        self.ramUsage_lbl = QLabel(self.memory_frame)
+        self.ramUsage_lbl.setObjectName(u"ramUsage_lbl")
+        self.ramUsage_lbl.setFont(font3)
+
+        self.gridLayout_3.addWidget(self.ramUsage_lbl, 4, 1, 1, 1)
 
 
         self.verticalLayout_3.addWidget(self.memory_frame)
@@ -658,7 +663,7 @@ class Ui_MainWindow(object):
         self.activitiesSearch_btn_2.setObjectName(u"activitiesSearch_btn_2")
         self.activitiesSearch_btn_2.setFont(font)
         icon11 = QIcon()
-        icon11.addFile(u":/icons/icons/search.svg", QSize(), QIcon.Normal, QIcon.Off)
+        icon11.addFile(u":/icons/icons/white/search.svg", QSize(), QIcon.Normal, QIcon.Off)
         self.activitiesSearch_btn_2.setIcon(icon11)
         self.activitiesSearch_btn_2.setIconSize(QSize(16, 16))
 
@@ -1103,27 +1108,27 @@ class Ui_MainWindow(object):
         self.rightCont_frame.setFrameShadow(QFrame.Raised)
         self.verticalLayout_32 = QVBoxLayout(self.rightCont_frame)
         self.verticalLayout_32.setObjectName(u"verticalLayout_32")
-        self.frame_2 = QFrame(self.rightCont_frame)
-        self.frame_2.setObjectName(u"frame_2")
-        self.frame_2.setFrameShape(QFrame.StyledPanel)
-        self.frame_2.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_33 = QVBoxLayout(self.frame_2)
+        self.about_frame = QFrame(self.rightCont_frame)
+        self.about_frame.setObjectName(u"about_frame")
+        self.about_frame.setFrameShape(QFrame.StyledPanel)
+        self.about_frame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_33 = QVBoxLayout(self.about_frame)
         self.verticalLayout_33.setObjectName(u"verticalLayout_33")
-        self.label = QLabel(self.frame_2)
-        self.label.setObjectName(u"label")
-        self.label.setFont(font2)
+        self.aboutTitle_lbl = QLabel(self.about_frame)
+        self.aboutTitle_lbl.setObjectName(u"aboutTitle_lbl")
+        self.aboutTitle_lbl.setFont(font2)
 
-        self.verticalLayout_33.addWidget(self.label, 0, Qt.AlignTop)
+        self.verticalLayout_33.addWidget(self.aboutTitle_lbl, 0, Qt.AlignTop)
 
-        self.label_2 = QLabel(self.frame_2)
-        self.label_2.setObjectName(u"label_2")
-        sizePolicy.setHeightForWidth(self.label_2.sizePolicy().hasHeightForWidth())
-        self.label_2.setSizePolicy(sizePolicy)
+        self.aboutDesc_lbl = QLabel(self.about_frame)
+        self.aboutDesc_lbl.setObjectName(u"aboutDesc_lbl")
+        sizePolicy.setHeightForWidth(self.aboutDesc_lbl.sizePolicy().hasHeightForWidth())
+        self.aboutDesc_lbl.setSizePolicy(sizePolicy)
 
-        self.verticalLayout_33.addWidget(self.label_2)
+        self.verticalLayout_33.addWidget(self.aboutDesc_lbl)
 
 
-        self.verticalLayout_32.addWidget(self.frame_2, 0, Qt.AlignTop)
+        self.verticalLayout_32.addWidget(self.about_frame, 0, Qt.AlignTop)
 
 
         self.horizontalLayout_8.addWidget(self.rightCont_frame)
@@ -1209,22 +1214,22 @@ class Ui_MainWindow(object):
         self.sensors_lbl.setText(QCoreApplication.translate("MainWindow", u"Sensors", None))
         self.networks_lbl.setText(QCoreApplication.translate("MainWindow", u"Networks", None))
         self.cpuMemoryTitle_lbl.setText(QCoreApplication.translate("MainWindow", u"System Memory", None))
-        self.cpuMainCore_lbl.setText(QCoreApplication.translate("MainWindow", u"CPU Main Core ", None))
         self.cpuCount_lbl.setText(QCoreApplication.translate("MainWindow", u"CPU Count", None))
         self.cpuMainCoreVal_lbl.setText(QCoreApplication.translate("MainWindow", u"N/A", None))
-        self.cpuCountVal_lbl.setText(QCoreApplication.translate("MainWindow", u"N/A", None))
-        self.cpuPer_lbl.setText(QCoreApplication.translate("MainWindow", u"CPU Per", None))
         self.cpuPerVal_lbl.setText(QCoreApplication.translate("MainWindow", u"N/A", None))
-        self.totalRam_lbl.setText(QCoreApplication.translate("MainWindow", u"Total Ram", None))
-        self.totalRamVal_lbl.setText(QCoreApplication.translate("MainWindow", u"N/A", None))
-        self.availableMem_lbl.setText(QCoreApplication.translate("MainWindow", u"Available Ram", None))
-        self.availableMemVal_lbl.setText(QCoreApplication.translate("MainWindow", u"N/A", None))
-        self.usedRam_lbl.setText(QCoreApplication.translate("MainWindow", u"Used Ram", None))
+        self.cpuMainCore_lbl.setText(QCoreApplication.translate("MainWindow", u"CPU Main Core ", None))
+        self.cpuPer_lbl.setText(QCoreApplication.translate("MainWindow", u"CPU Per", None))
+        self.cpuCountVal_lbl.setText(QCoreApplication.translate("MainWindow", u"N/A", None))
         self.usedRamVal_lbl.setText(QCoreApplication.translate("MainWindow", u"N/A", None))
-        self.freeRam_lbl.setText(QCoreApplication.translate("MainWindow", u"Free Ram", None))
-        self.freeRamVal_lbl.setText(QCoreApplication.translate("MainWindow", u"N/A", None))
-        self.ramUsage_lbl.setText(QCoreApplication.translate("MainWindow", u"Ram Usage", None))
         self.ramUsageVal_lbl.setText(QCoreApplication.translate("MainWindow", u"N/A", None))
+        self.totalRamVal_lbl.setText(QCoreApplication.translate("MainWindow", u"N/A", None))
+        self.totalRam_lbl.setText(QCoreApplication.translate("MainWindow", u"Total Ram", None))
+        self.freeRamVal_lbl.setText(QCoreApplication.translate("MainWindow", u"N/A", None))
+        self.usedRam_lbl.setText(QCoreApplication.translate("MainWindow", u"Used Ram", None))
+        self.availableMemVal_lbl.setText(QCoreApplication.translate("MainWindow", u"N/A", None))
+        self.availableMem_lbl.setText(QCoreApplication.translate("MainWindow", u"Available Ram", None))
+        self.freeRam_lbl.setText(QCoreApplication.translate("MainWindow", u"Free Ram", None))
+        self.ramUsage_lbl.setText(QCoreApplication.translate("MainWindow", u"Ram Usage", None))
         self.batteryTitle_lbl.setText(QCoreApplication.translate("MainWindow", u"Battery Information", None))
         self.status_lbl.setText(QCoreApplication.translate("MainWindow", u"Status", None))
         self.statusVal_lbl.setText(QCoreApplication.translate("MainWindow", u"N/A", None))
@@ -1354,8 +1359,8 @@ class Ui_MainWindow(object):
         ___qtablewidgetitem45.setText(QCoreApplication.translate("MainWindow", u"STATUS", None));
         ___qtablewidgetitem46 = self.networkConnectionsTable.horizontalHeaderItem(6)
         ___qtablewidgetitem46.setText(QCoreApplication.translate("MainWindow", u"PID", None));
-        self.label.setText(QCoreApplication.translate("MainWindow", u"About", None))
-        self.label_2.setText(QCoreApplication.translate("MainWindow", u"More information to be added", None))
+        self.aboutTitle_lbl.setText(QCoreApplication.translate("MainWindow", u"About", None))
+        self.aboutDesc_lbl.setText(QCoreApplication.translate("MainWindow", u"More information to be added", None))
         self.footerVersion_lbl.setText(QCoreApplication.translate("MainWindow", u"Version 1.0 | Copyright Spinn Co.", None))
         self.footerHelp_btn.setText(QCoreApplication.translate("MainWindow", u"?", None))
     # retranslateUi

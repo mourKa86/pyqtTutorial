@@ -10,7 +10,9 @@ import os
 from PySide6 import *
 from qt_material import apply_stylesheet
 from PySide6 import QtCore, QtGui, QtWidgets
-import icons_rc
+import psutil
+
+
 
 
 ## Import GUI FILE
@@ -46,11 +48,44 @@ class MainWindow(QMainWindow):
         self.ui.maximizeWindow_btn.clicked.connect(lambda:self.restore_or_maximize_window())
         self.ui.cpu_btn.clicked.connect(lambda:self.ui.stackedWidget.setCurrentWidget(self.ui.cpuMemory_page))
         self.ui.battery_btn.clicked.connect(lambda:self.ui.stackedWidget.setCurrentWidget(self.ui.battery_page))
-        self.
+        self.ui.sysInfo_btn.clicked.connect(lambda:self.ui.stackedWidget.setCurrentWidget(self.ui.sysInfo_page))
+        self.ui.activities_btn.clicked.connect(lambda:self.ui.stackedWidget.setCurrentWidget(self.ui.activities_page))
+        self.ui.sensors_btn.clicked.connect(lambda:self.ui.stackedWidget.setCurrentWidget(self.ui.sensors_page))
+        self.ui.storage_btn.clicked.connect(lambda:self.ui.stackedWidget.setCurrentWidget(self.ui.storage_page))
+        self.ui.networks_btn.clicked.connect(lambda:self.ui.stackedWidget.setCurrentWidget(self.ui.networks_page))
 
+        def moveWindow(e):
+            if self.isMaximized() == False:
+                if e.buttons() == Qt.LeftButton:
+                    p = e.globalPosition()
+                    globalPos = p.toPoint()
+                    delta = QPoint(globalPos - self.oldPosition)
+                    self.move(self.x() + delta.x(), self.y() + delta.y())
+                    self.oldPosition = globalPos
+                    e.accept()
 
-
+        self.ui.header_frame.mouseMoveEvent = moveWindow
+        self.ui.menu_btn.clicked.connect(lambda: self.slideLeftMenu())
         self.show()
+
+    def slideLeftMenu(self):
+        width = self.ui.leftMenuCont_frame.width()
+        if width == 60:
+            newWidth = 200
+        else:
+            newWidth = 60
+
+        self.animation = QtCore.QPropertyAnimation(self.ui.leftMenuCont_frame, b"minimumWidth")
+        self.animation.setDuration(250)
+        self.animation.setStartValue(width)
+        self.animation.setEndValue(newWidth)
+        self.animation.setEasingCurve(QtCore.QEasingCurve.InOutQuart)
+        self.animation.start()
+
+    def mousePressEvent(self, event):
+        p = event.globalPosition()
+        globalPos = p.toPoint()
+        self.oldPosition = globalPos
 
     def restore_or_maximize_window(self):
         direct = os.getcwd()
