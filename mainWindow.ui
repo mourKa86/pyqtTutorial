@@ -605,6 +605,9 @@ margin:0;</string>
          <layout class="QVBoxLayout" name="verticalLayout_2">
           <item>
            <widget class="QStackedWidget" name="stackedWidget">
+            <property name="currentIndex">
+             <number>3</number>
+            </property>
             <widget class="QWidget" name="cpuMemory_page">
              <layout class="QVBoxLayout" name="verticalLayout_3">
               <item alignment="Qt::AlignLeft|Qt::AlignTop">
@@ -651,46 +654,6 @@ margin:0;</string>
                  <property name="rightMargin">
                   <number>9</number>
                  </property>
-                 <item row="0" column="0">
-                  <widget class="QLabel" name="cpuCount_lbl">
-                   <property name="font">
-                    <font>
-                     <pointsize>10</pointsize>
-                     <weight>75</weight>
-                     <bold>true</bold>
-                    </font>
-                   </property>
-                   <property name="text">
-                    <string>CPU Count</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="2" column="1">
-                  <widget class="QLabel" name="cpuMainCoreVal_lbl">
-                   <property name="font">
-                    <font>
-                     <pointsize>10</pointsize>
-                    </font>
-                   </property>
-                   <property name="text">
-                    <string>N/A</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="2" column="0">
-                  <widget class="QLabel" name="cpuMainCore_lbl">
-                   <property name="font">
-                    <font>
-                     <pointsize>10</pointsize>
-                     <weight>75</weight>
-                     <bold>true</bold>
-                    </font>
-                   </property>
-                   <property name="text">
-                    <string>CPU Main Core </string>
-                   </property>
-                  </widget>
-                 </item>
                  <item row="1" column="1">
                   <widget class="QLabel" name="cpuPerVal_lbl">
                    <property name="font">
@@ -729,9 +692,55 @@ margin:0;</string>
                    </property>
                   </widget>
                  </item>
+                 <item row="2" column="0">
+                  <widget class="QLabel" name="cpuMainCore_lbl">
+                   <property name="font">
+                    <font>
+                     <pointsize>10</pointsize>
+                     <weight>75</weight>
+                     <bold>true</bold>
+                    </font>
+                   </property>
+                   <property name="text">
+                    <string>CPU Main Core </string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="0">
+                  <widget class="QLabel" name="cpuCount_lbl">
+                   <property name="font">
+                    <font>
+                     <pointsize>10</pointsize>
+                     <weight>75</weight>
+                     <bold>true</bold>
+                    </font>
+                   </property>
+                   <property name="text">
+                    <string>CPU Count</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="2" column="1">
+                  <widget class="QLabel" name="cpuMainCoreVal_lbl">
+                   <property name="font">
+                    <font>
+                     <pointsize>10</pointsize>
+                    </font>
+                   </property>
+                   <property name="text">
+                    <string>N/A</string>
+                   </property>
+                  </widget>
+                 </item>
                  <item row="0" column="2" rowspan="3">
-                  <widget class="QWidget" name="cpuMonitor_widget" native="true">
+                  <widget class="roundProgressBar" name="cpuMonitor_widget" native="true">
                    <property name="minimumSize">
+                    <size>
+                     <width>150</width>
+                     <height>150</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
                     <size>
                      <width>150</width>
                      <height>150</height>
@@ -760,34 +769,8 @@ margin:0;</string>
                  <property name="rightMargin">
                   <number>9</number>
                  </property>
-                 <item row="0" column="1">
-                  <widget class="QLabel" name="totalRam_lbl">
-                   <property name="font">
-                    <font>
-                     <pointsize>10</pointsize>
-                     <weight>75</weight>
-                     <bold>true</bold>
-                    </font>
-                   </property>
-                   <property name="text">
-                    <string>Total Ram</string>
-                   </property>
-                  </widget>
-                 </item>
                  <item row="0" column="3">
                   <widget class="QLabel" name="totalRamVal_lbl">
-                   <property name="font">
-                    <font>
-                     <pointsize>10</pointsize>
-                    </font>
-                   </property>
-                   <property name="text">
-                    <string>N/A</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="3" column="3">
-                  <widget class="QLabel" name="freeRamVal_lbl">
                    <property name="font">
                     <font>
                      <pointsize>10</pointsize>
@@ -812,8 +795,20 @@ margin:0;</string>
                    </property>
                   </widget>
                  </item>
-                 <item row="1" column="1">
-                  <widget class="QLabel" name="availableMem_lbl">
+                 <item row="3" column="3">
+                  <widget class="QLabel" name="freeRamVal_lbl">
+                   <property name="font">
+                    <font>
+                     <pointsize>10</pointsize>
+                    </font>
+                   </property>
+                   <property name="text">
+                    <string>N/A</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="1">
+                  <widget class="QLabel" name="totalRam_lbl">
                    <property name="font">
                     <font>
                      <pointsize>10</pointsize>
@@ -822,7 +817,35 @@ margin:0;</string>
                     </font>
                    </property>
                    <property name="text">
-                    <string>Available Ram</string>
+                    <string>Total Ram</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="4" rowspan="5">
+                  <widget class="spiralProgressBar" name="ramMonitor_widget" native="true">
+                   <property name="minimumSize">
+                    <size>
+                     <width>150</width>
+                     <height>150</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>150</width>
+                     <height>150</height>
+                    </size>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="3">
+                  <widget class="QLabel" name="availableMemVal_lbl">
+                   <property name="font">
+                    <font>
+                     <pointsize>10</pointsize>
+                    </font>
+                   </property>
+                   <property name="text">
+                    <string>N/A</string>
                    </property>
                   </widget>
                  </item>
@@ -840,18 +863,6 @@ margin:0;</string>
                    </property>
                   </widget>
                  </item>
-                 <item row="1" column="3">
-                  <widget class="QLabel" name="availableMemVal_lbl">
-                   <property name="font">
-                    <font>
-                     <pointsize>10</pointsize>
-                    </font>
-                   </property>
-                   <property name="text">
-                    <string>N/A</string>
-                   </property>
-                  </widget>
-                 </item>
                  <item row="4" column="1">
                   <widget class="QLabel" name="ramUsage_lbl">
                    <property name="font">
@@ -863,18 +874,6 @@ margin:0;</string>
                    </property>
                    <property name="text">
                     <string>Ram Usage</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="2" column="3">
-                  <widget class="QLabel" name="usedRamVal_lbl">
-                   <property name="font">
-                    <font>
-                     <pointsize>10</pointsize>
-                    </font>
-                   </property>
-                   <property name="text">
-                    <string>N/A</string>
                    </property>
                   </widget>
                  </item>
@@ -890,13 +889,29 @@ margin:0;</string>
                    </property>
                   </widget>
                  </item>
-                 <item row="0" column="4" rowspan="5">
-                  <widget class="QWidget" name="ramMonitor_widget" native="true">
-                   <property name="minimumSize">
-                    <size>
-                     <width>150</width>
-                     <height>150</height>
-                    </size>
+                 <item row="2" column="3">
+                  <widget class="QLabel" name="usedRamVal_lbl">
+                   <property name="font">
+                    <font>
+                     <pointsize>10</pointsize>
+                    </font>
+                   </property>
+                   <property name="text">
+                    <string>N/A</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="1">
+                  <widget class="QLabel" name="availableMem_lbl">
+                   <property name="font">
+                    <font>
+                     <pointsize>10</pointsize>
+                     <weight>75</weight>
+                     <bold>true</bold>
+                    </font>
+                   </property>
+                   <property name="text">
+                    <string>Available Ram</string>
                    </property>
                   </widget>
                  </item>
@@ -907,7 +922,7 @@ margin:0;</string>
             </widget>
             <widget class="QWidget" name="battery_page">
              <layout class="QVBoxLayout" name="verticalLayout_6">
-              <item>
+              <item alignment="Qt::AlignTop">
                <widget class="QFrame" name="batteryTitle_frame">
                 <property name="frameShape">
                  <enum>QFrame::StyledPanel</enum>
@@ -948,6 +963,18 @@ margin:0;</string>
                  <enum>QFrame::Raised</enum>
                 </property>
                 <layout class="QGridLayout" name="gridLayout_4">
+                 <item row="0" column="1">
+                  <widget class="QLabel" name="statusVal_lbl">
+                   <property name="font">
+                    <font>
+                     <pointsize>10</pointsize>
+                    </font>
+                   </property>
+                   <property name="text">
+                    <string>N/A</string>
+                   </property>
+                  </widget>
+                 </item>
                  <item row="0" column="0">
                   <widget class="QLabel" name="status_lbl">
                    <property name="font">
@@ -959,18 +986,6 @@ margin:0;</string>
                    </property>
                    <property name="text">
                     <string>Status</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="0" column="1">
-                  <widget class="QLabel" name="statusVal_lbl">
-                   <property name="font">
-                    <font>
-                     <pointsize>10</pointsize>
-                    </font>
-                   </property>
-                   <property name="text">
-                    <string>N/A</string>
                    </property>
                   </widget>
                  </item>
@@ -1000,6 +1015,18 @@ margin:0;</string>
                    </property>
                   </widget>
                  </item>
+                 <item row="2" column="1">
+                  <widget class="QLabel" name="timeLeftVal_lbl">
+                   <property name="font">
+                    <font>
+                     <pointsize>10</pointsize>
+                    </font>
+                   </property>
+                   <property name="text">
+                    <string>N/A</string>
+                   </property>
+                  </widget>
+                 </item>
                  <item row="2" column="0">
                   <widget class="QLabel" name="timeLeft_lbl">
                    <property name="font">
@@ -1011,18 +1038,6 @@ margin:0;</string>
                    </property>
                    <property name="text">
                     <string>Time Left</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="2" column="1">
-                  <widget class="QLabel" name="timeLeftVal_lbl">
-                   <property name="font">
-                    <font>
-                     <pointsize>10</pointsize>
-                    </font>
-                   </property>
-                   <property name="text">
-                    <string>N/A</string>
                    </property>
                   </widget>
                  </item>
@@ -1049,6 +1064,22 @@ margin:0;</string>
                    </property>
                    <property name="text">
                     <string>N/A</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="2" rowspan="4">
+                  <widget class="roundProgressBar" name="batteryMonitor_widget" native="true">
+                   <property name="minimumSize">
+                    <size>
+                     <width>150</width>
+                     <height>150</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>150</width>
+                     <height>150</height>
+                    </size>
                    </property>
                   </widget>
                  </item>
@@ -1256,6 +1287,13 @@ margin:0;</string>
                    </property>
                   </widget>
                  </item>
+                 <item row="1" column="3">
+                  <widget class="QLabel" name="processorVal_lbl">
+                   <property name="text">
+                    <string>N/A</string>
+                   </property>
+                  </widget>
+                 </item>
                 </layout>
                </widget>
               </item>
@@ -1308,7 +1346,7 @@ margin:0;</string>
                      </widget>
                     </item>
                     <item alignment="Qt::AlignRight|Qt::AlignTop">
-                     <widget class="QPushButton" name="activitiesSearch_btn_2">
+                     <widget class="QPushButton" name="activitiesSearch_btn">
                       <property name="font">
                        <font>
                         <pointsize>10</pointsize>
@@ -2228,6 +2266,20 @@ margin:0;</string>
    </layout>
   </widget>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>roundProgressBar</class>
+   <extends>QWidget</extends>
+   <header>PySide2extn.RoundProgressBar.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>spiralProgressBar</class>
+   <extends>QWidget</extends>
+   <header>PySide2extn.SpiralProgressBar.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
  <resources>
   <include location="icons.qrc"/>
  </resources>
