@@ -136,9 +136,6 @@ class MainWindow(QMainWindow):
         self.ui.osVal_lbl.setText(platform.system())
         self.ui.processorVal_lbl.setText(platform.processor())
 
-
-
-
     def cpu_ram(self):
         totalRam = 1.0
         totalRam = psutil.virtual_memory()[0] * totalRam
