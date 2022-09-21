@@ -654,34 +654,24 @@ margin:0;</string>
                  <property name="rightMargin">
                   <number>9</number>
                  </property>
+                 <item row="0" column="2" rowspan="3">
+                  <widget class="roundProgressBar" name="cpuMonitor_widget" native="true">
+                   <property name="minimumSize">
+                    <size>
+                     <width>150</width>
+                     <height>150</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>150</width>
+                     <height>150</height>
+                    </size>
+                   </property>
+                  </widget>
+                 </item>
                  <item row="1" column="1">
                   <widget class="QLabel" name="cpuPerVal_lbl">
-                   <property name="font">
-                    <font>
-                     <pointsize>10</pointsize>
-                    </font>
-                   </property>
-                   <property name="text">
-                    <string>N/A</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="1" column="0">
-                  <widget class="QLabel" name="cpuPer_lbl">
-                   <property name="font">
-                    <font>
-                     <pointsize>10</pointsize>
-                     <weight>75</weight>
-                     <bold>true</bold>
-                    </font>
-                   </property>
-                   <property name="text">
-                    <string>CPU Per</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="0" column="1">
-                  <widget class="QLabel" name="cpuCountVal_lbl">
                    <property name="font">
                     <font>
                      <pointsize>10</pointsize>
@@ -706,8 +696,20 @@ margin:0;</string>
                    </property>
                   </widget>
                  </item>
-                 <item row="0" column="0">
-                  <widget class="QLabel" name="cpuCount_lbl">
+                 <item row="0" column="1">
+                  <widget class="QLabel" name="cpuCountVal_lbl">
+                   <property name="font">
+                    <font>
+                     <pointsize>10</pointsize>
+                    </font>
+                   </property>
+                   <property name="text">
+                    <string>N/A</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="0">
+                  <widget class="QLabel" name="cpuPer_lbl">
                    <property name="font">
                     <font>
                      <pointsize>10</pointsize>
@@ -716,7 +718,7 @@ margin:0;</string>
                     </font>
                    </property>
                    <property name="text">
-                    <string>CPU Count</string>
+                    <string>CPU Per</string>
                    </property>
                   </widget>
                  </item>
@@ -732,19 +734,17 @@ margin:0;</string>
                    </property>
                   </widget>
                  </item>
-                 <item row="0" column="2" rowspan="3">
-                  <widget class="roundProgressBar" name="cpuMonitor_widget" native="true">
-                   <property name="minimumSize">
-                    <size>
-                     <width>150</width>
-                     <height>150</height>
-                    </size>
+                 <item row="0" column="0">
+                  <widget class="QLabel" name="cpuCount_lbl">
+                   <property name="font">
+                    <font>
+                     <pointsize>10</pointsize>
+                     <weight>75</weight>
+                     <bold>true</bold>
+                    </font>
                    </property>
-                   <property name="maximumSize">
-                    <size>
-                     <width>150</width>
-                     <height>150</height>
-                    </size>
+                   <property name="text">
+                    <string>CPU Count</string>
                    </property>
                   </widget>
                  </item>
@@ -963,7 +963,7 @@ margin:0;</string>
                  <enum>QFrame::Raised</enum>
                 </property>
                 <layout class="QGridLayout" name="gridLayout_4">
-                 <item row="0" column="1">
+                 <item row="0" column="1" alignment="Qt::AlignTop">
                   <widget class="QLabel" name="statusVal_lbl">
                    <property name="font">
                     <font>
@@ -975,7 +975,7 @@ margin:0;</string>
                    </property>
                   </widget>
                  </item>
-                 <item row="0" column="0">
+                 <item row="0" column="0" alignment="Qt::AlignTop">
                   <widget class="QLabel" name="status_lbl">
                    <property name="font">
                     <font>
@@ -989,7 +989,7 @@ margin:0;</string>
                    </property>
                   </widget>
                  </item>
-                 <item row="1" column="0">
+                 <item row="1" column="0" alignment="Qt::AlignTop">
                   <widget class="QLabel" name="charge_lbl">
                    <property name="font">
                     <font>
@@ -1003,7 +1003,7 @@ margin:0;</string>
                    </property>
                   </widget>
                  </item>
-                 <item row="1" column="1">
+                 <item row="1" column="1" alignment="Qt::AlignTop">
                   <widget class="QLabel" name="chargeVal_lbl">
                    <property name="font">
                     <font>
@@ -1015,7 +1015,7 @@ margin:0;</string>
                    </property>
                   </widget>
                  </item>
-                 <item row="2" column="1">
+                 <item row="2" column="1" alignment="Qt::AlignTop">
                   <widget class="QLabel" name="timeLeftVal_lbl">
                    <property name="font">
                     <font>
@@ -1027,7 +1027,7 @@ margin:0;</string>
                    </property>
                   </widget>
                  </item>
-                 <item row="2" column="0">
+                 <item row="2" column="0" alignment="Qt::AlignTop">
                   <widget class="QLabel" name="timeLeft_lbl">
                    <property name="font">
                     <font>
@@ -1041,7 +1041,7 @@ margin:0;</string>
                    </property>
                   </widget>
                  </item>
-                 <item row="3" column="0">
+                 <item row="3" column="0" alignment="Qt::AlignTop">
                   <widget class="QLabel" name="pluggedIn_lbl">
                    <property name="font">
                     <font>
@@ -1055,7 +1055,7 @@ margin:0;</string>
                    </property>
                   </widget>
                  </item>
-                 <item row="3" column="1">
+                 <item row="3" column="1" alignment="Qt::AlignTop">
                   <widget class="QLabel" name="pluggedInVal_lbl">
                    <property name="font">
                     <font>
@@ -1389,6 +1389,9 @@ margin:0;</string>
                      <pointsize>10</pointsize>
                     </font>
                    </property>
+                   <property name="sizeAdjustPolicy">
+                    <enum>QAbstractScrollArea::AdjustToContents</enum>
+                   </property>
                    <column>
                     <property name="text">
                      <string>PROCESS ID</string>
@@ -1680,7 +1683,7 @@ margin:0;</string>
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>208</width>
+                   <width>822</width>
                    <height>568</height>
                   </rect>
                  </property>
@@ -1769,7 +1772,7 @@ margin:0;</string>
                           </property>
                           <layout class="QVBoxLayout" name="verticalLayout_20">
                            <item>
-                            <widget class="QTableWidget" name="tableWidget">
+                            <widget class="QTableWidget" name="statsTable">
                              <property name="font">
                               <font>
                                <pointsize>10</pointsize>

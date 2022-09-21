@@ -332,21 +332,28 @@ class Ui_MainWindow(object):
         self.gridLayout_2 = QGridLayout(self.cpu_frame)
         self.gridLayout_2.setObjectName(u"gridLayout_2")
         self.gridLayout_2.setContentsMargins(-1, -1, 9, -1)
+        self.cpuMonitor_widget = roundProgressBar(self.cpu_frame)
+        self.cpuMonitor_widget.setObjectName(u"cpuMonitor_widget")
+        self.cpuMonitor_widget.setMinimumSize(QSize(150, 150))
+        self.cpuMonitor_widget.setMaximumSize(QSize(150, 150))
+
+        self.gridLayout_2.addWidget(self.cpuMonitor_widget, 0, 2, 3, 1)
+
         self.cpuPerVal_lbl = QLabel(self.cpu_frame)
         self.cpuPerVal_lbl.setObjectName(u"cpuPerVal_lbl")
         self.cpuPerVal_lbl.setFont(font)
 
         self.gridLayout_2.addWidget(self.cpuPerVal_lbl, 1, 1, 1, 1)
 
-        self.cpuPer_lbl = QLabel(self.cpu_frame)
-        self.cpuPer_lbl.setObjectName(u"cpuPer_lbl")
+        self.cpuMainCore_lbl = QLabel(self.cpu_frame)
+        self.cpuMainCore_lbl.setObjectName(u"cpuMainCore_lbl")
         font3 = QFont()
         font3.setPointSize(10)
         font3.setBold(True)
         font3.setWeight(75)
-        self.cpuPer_lbl.setFont(font3)
+        self.cpuMainCore_lbl.setFont(font3)
 
-        self.gridLayout_2.addWidget(self.cpuPer_lbl, 1, 0, 1, 1)
+        self.gridLayout_2.addWidget(self.cpuMainCore_lbl, 2, 0, 1, 1)
 
         self.cpuCountVal_lbl = QLabel(self.cpu_frame)
         self.cpuCountVal_lbl.setObjectName(u"cpuCountVal_lbl")
@@ -354,17 +361,11 @@ class Ui_MainWindow(object):
 
         self.gridLayout_2.addWidget(self.cpuCountVal_lbl, 0, 1, 1, 1)
 
-        self.cpuMainCore_lbl = QLabel(self.cpu_frame)
-        self.cpuMainCore_lbl.setObjectName(u"cpuMainCore_lbl")
-        self.cpuMainCore_lbl.setFont(font3)
+        self.cpuPer_lbl = QLabel(self.cpu_frame)
+        self.cpuPer_lbl.setObjectName(u"cpuPer_lbl")
+        self.cpuPer_lbl.setFont(font3)
 
-        self.gridLayout_2.addWidget(self.cpuMainCore_lbl, 2, 0, 1, 1)
-
-        self.cpuCount_lbl = QLabel(self.cpu_frame)
-        self.cpuCount_lbl.setObjectName(u"cpuCount_lbl")
-        self.cpuCount_lbl.setFont(font3)
-
-        self.gridLayout_2.addWidget(self.cpuCount_lbl, 0, 0, 1, 1)
+        self.gridLayout_2.addWidget(self.cpuPer_lbl, 1, 0, 1, 1)
 
         self.cpuMainCoreVal_lbl = QLabel(self.cpu_frame)
         self.cpuMainCoreVal_lbl.setObjectName(u"cpuMainCoreVal_lbl")
@@ -372,12 +373,11 @@ class Ui_MainWindow(object):
 
         self.gridLayout_2.addWidget(self.cpuMainCoreVal_lbl, 2, 1, 1, 1)
 
-        self.cpuMonitor_widget = roundProgressBar(self.cpu_frame)
-        self.cpuMonitor_widget.setObjectName(u"cpuMonitor_widget")
-        self.cpuMonitor_widget.setMinimumSize(QSize(150, 150))
-        self.cpuMonitor_widget.setMaximumSize(QSize(150, 150))
+        self.cpuCount_lbl = QLabel(self.cpu_frame)
+        self.cpuCount_lbl.setObjectName(u"cpuCount_lbl")
+        self.cpuCount_lbl.setFont(font3)
 
-        self.gridLayout_2.addWidget(self.cpuMonitor_widget, 0, 2, 3, 1)
+        self.gridLayout_2.addWidget(self.cpuCount_lbl, 0, 0, 1, 1)
 
 
         self.verticalLayout_3.addWidget(self.cpu_frame)
@@ -493,49 +493,49 @@ class Ui_MainWindow(object):
         self.statusVal_lbl.setObjectName(u"statusVal_lbl")
         self.statusVal_lbl.setFont(font)
 
-        self.gridLayout_4.addWidget(self.statusVal_lbl, 0, 1, 1, 1)
+        self.gridLayout_4.addWidget(self.statusVal_lbl, 0, 1, 1, 1, Qt.AlignTop)
 
         self.status_lbl = QLabel(self.battery_frame)
         self.status_lbl.setObjectName(u"status_lbl")
         self.status_lbl.setFont(font3)
 
-        self.gridLayout_4.addWidget(self.status_lbl, 0, 0, 1, 1)
+        self.gridLayout_4.addWidget(self.status_lbl, 0, 0, 1, 1, Qt.AlignTop)
 
         self.charge_lbl = QLabel(self.battery_frame)
         self.charge_lbl.setObjectName(u"charge_lbl")
         self.charge_lbl.setFont(font3)
 
-        self.gridLayout_4.addWidget(self.charge_lbl, 1, 0, 1, 1)
+        self.gridLayout_4.addWidget(self.charge_lbl, 1, 0, 1, 1, Qt.AlignTop)
 
         self.chargeVal_lbl = QLabel(self.battery_frame)
         self.chargeVal_lbl.setObjectName(u"chargeVal_lbl")
         self.chargeVal_lbl.setFont(font)
 
-        self.gridLayout_4.addWidget(self.chargeVal_lbl, 1, 1, 1, 1)
+        self.gridLayout_4.addWidget(self.chargeVal_lbl, 1, 1, 1, 1, Qt.AlignTop)
 
         self.timeLeftVal_lbl = QLabel(self.battery_frame)
         self.timeLeftVal_lbl.setObjectName(u"timeLeftVal_lbl")
         self.timeLeftVal_lbl.setFont(font)
 
-        self.gridLayout_4.addWidget(self.timeLeftVal_lbl, 2, 1, 1, 1)
+        self.gridLayout_4.addWidget(self.timeLeftVal_lbl, 2, 1, 1, 1, Qt.AlignTop)
 
         self.timeLeft_lbl = QLabel(self.battery_frame)
         self.timeLeft_lbl.setObjectName(u"timeLeft_lbl")
         self.timeLeft_lbl.setFont(font3)
 
-        self.gridLayout_4.addWidget(self.timeLeft_lbl, 2, 0, 1, 1)
+        self.gridLayout_4.addWidget(self.timeLeft_lbl, 2, 0, 1, 1, Qt.AlignTop)
 
         self.pluggedIn_lbl = QLabel(self.battery_frame)
         self.pluggedIn_lbl.setObjectName(u"pluggedIn_lbl")
         self.pluggedIn_lbl.setFont(font3)
 
-        self.gridLayout_4.addWidget(self.pluggedIn_lbl, 3, 0, 1, 1)
+        self.gridLayout_4.addWidget(self.pluggedIn_lbl, 3, 0, 1, 1, Qt.AlignTop)
 
         self.pluggedInVal_lbl = QLabel(self.battery_frame)
         self.pluggedInVal_lbl.setObjectName(u"pluggedInVal_lbl")
         self.pluggedInVal_lbl.setFont(font)
 
-        self.gridLayout_4.addWidget(self.pluggedInVal_lbl, 3, 1, 1, 1)
+        self.gridLayout_4.addWidget(self.pluggedInVal_lbl, 3, 1, 1, 1, Qt.AlignTop)
 
         self.batteryMonitor_widget = roundProgressBar(self.battery_frame)
         self.batteryMonitor_widget.setObjectName(u"batteryMonitor_widget")
@@ -727,6 +727,7 @@ class Ui_MainWindow(object):
         self.activities_table.setHorizontalHeaderItem(7, __qtablewidgetitem7)
         self.activities_table.setObjectName(u"activities_table")
         self.activities_table.setFont(font)
+        self.activities_table.setSizeAdjustPolicy(QAbstractScrollArea.AdjustToContents)
 
         self.verticalLayout_9.addWidget(self.activities_table)
 
@@ -879,7 +880,7 @@ class Ui_MainWindow(object):
         self.networks_scroll.setWidgetResizable(True)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 208, 568))
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 822, 568))
         self.verticalLayout_30 = QVBoxLayout(self.scrollAreaWidgetContents)
         self.verticalLayout_30.setSpacing(0)
         self.verticalLayout_30.setObjectName(u"verticalLayout_30")
@@ -919,23 +920,23 @@ class Ui_MainWindow(object):
         self.statsTable_frame.setFrameShadow(QFrame.Raised)
         self.verticalLayout_20 = QVBoxLayout(self.statsTable_frame)
         self.verticalLayout_20.setObjectName(u"verticalLayout_20")
-        self.tableWidget = QTableWidget(self.statsTable_frame)
-        if (self.tableWidget.columnCount() < 5):
-            self.tableWidget.setColumnCount(5)
+        self.statsTable = QTableWidget(self.statsTable_frame)
+        if (self.statsTable.columnCount() < 5):
+            self.statsTable.setColumnCount(5)
         __qtablewidgetitem23 = QTableWidgetItem()
-        self.tableWidget.setHorizontalHeaderItem(0, __qtablewidgetitem23)
+        self.statsTable.setHorizontalHeaderItem(0, __qtablewidgetitem23)
         __qtablewidgetitem24 = QTableWidgetItem()
-        self.tableWidget.setHorizontalHeaderItem(1, __qtablewidgetitem24)
+        self.statsTable.setHorizontalHeaderItem(1, __qtablewidgetitem24)
         __qtablewidgetitem25 = QTableWidgetItem()
-        self.tableWidget.setHorizontalHeaderItem(2, __qtablewidgetitem25)
+        self.statsTable.setHorizontalHeaderItem(2, __qtablewidgetitem25)
         __qtablewidgetitem26 = QTableWidgetItem()
-        self.tableWidget.setHorizontalHeaderItem(3, __qtablewidgetitem26)
+        self.statsTable.setHorizontalHeaderItem(3, __qtablewidgetitem26)
         __qtablewidgetitem27 = QTableWidgetItem()
-        self.tableWidget.setHorizontalHeaderItem(4, __qtablewidgetitem27)
-        self.tableWidget.setObjectName(u"tableWidget")
-        self.tableWidget.setFont(font)
+        self.statsTable.setHorizontalHeaderItem(4, __qtablewidgetitem27)
+        self.statsTable.setObjectName(u"statsTable")
+        self.statsTable.setFont(font)
 
-        self.verticalLayout_20.addWidget(self.tableWidget)
+        self.verticalLayout_20.addWidget(self.statsTable)
 
 
         self.verticalLayout_21.addWidget(self.statsTable_frame)
@@ -1243,11 +1244,11 @@ class Ui_MainWindow(object):
         self.networks_lbl.setText(QCoreApplication.translate("MainWindow", u"Networks", None))
         self.cpuMemoryTitle_lbl.setText(QCoreApplication.translate("MainWindow", u"System Memory", None))
         self.cpuPerVal_lbl.setText(QCoreApplication.translate("MainWindow", u"N/A", None))
-        self.cpuPer_lbl.setText(QCoreApplication.translate("MainWindow", u"CPU Per", None))
-        self.cpuCountVal_lbl.setText(QCoreApplication.translate("MainWindow", u"N/A", None))
         self.cpuMainCore_lbl.setText(QCoreApplication.translate("MainWindow", u"CPU Main Core ", None))
-        self.cpuCount_lbl.setText(QCoreApplication.translate("MainWindow", u"CPU Count", None))
+        self.cpuCountVal_lbl.setText(QCoreApplication.translate("MainWindow", u"N/A", None))
+        self.cpuPer_lbl.setText(QCoreApplication.translate("MainWindow", u"CPU Per", None))
         self.cpuMainCoreVal_lbl.setText(QCoreApplication.translate("MainWindow", u"N/A", None))
+        self.cpuCount_lbl.setText(QCoreApplication.translate("MainWindow", u"CPU Count", None))
         self.totalRamVal_lbl.setText(QCoreApplication.translate("MainWindow", u"N/A", None))
         self.usedRam_lbl.setText(QCoreApplication.translate("MainWindow", u"Used Ram", None))
         self.freeRamVal_lbl.setText(QCoreApplication.translate("MainWindow", u"N/A", None))
@@ -1335,13 +1336,13 @@ class Ui_MainWindow(object):
         ___qtablewidgetitem21 = self.sensorsTable.horizontalHeaderItem(4)
         ___qtablewidgetitem21.setText(QCoreApplication.translate("MainWindow", u"CRITICAL", None));
         self.statsTitle_lbl.setText(QCoreApplication.translate("MainWindow", u"Stats", None))
-        ___qtablewidgetitem22 = self.tableWidget.horizontalHeaderItem(1)
+        ___qtablewidgetitem22 = self.statsTable.horizontalHeaderItem(1)
         ___qtablewidgetitem22.setText(QCoreApplication.translate("MainWindow", u"ISUP", None));
-        ___qtablewidgetitem23 = self.tableWidget.horizontalHeaderItem(2)
+        ___qtablewidgetitem23 = self.statsTable.horizontalHeaderItem(2)
         ___qtablewidgetitem23.setText(QCoreApplication.translate("MainWindow", u"DUPLEX", None));
-        ___qtablewidgetitem24 = self.tableWidget.horizontalHeaderItem(3)
+        ___qtablewidgetitem24 = self.statsTable.horizontalHeaderItem(3)
         ___qtablewidgetitem24.setText(QCoreApplication.translate("MainWindow", u"SPEED", None));
-        ___qtablewidgetitem25 = self.tableWidget.horizontalHeaderItem(4)
+        ___qtablewidgetitem25 = self.statsTable.horizontalHeaderItem(4)
         ___qtablewidgetitem25.setText(QCoreApplication.translate("MainWindow", u"MTU", None));
         self.ioTitle_lbl.setText(QCoreApplication.translate("MainWindow", u"Network IO Counters", None))
         ___qtablewidgetitem26 = self.ioTable.horizontalHeaderItem(0)

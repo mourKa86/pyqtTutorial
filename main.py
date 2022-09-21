@@ -80,42 +80,49 @@ class MainWindow(QMainWindow):
 
     def processes(self):
         for x in psutil.pids():
-            rowPosition = self.ui.tableWidget.rowCount()
-            self.ui.tableWidget.insertRow(rowPosition)
+            rowPosition = self.ui.activities_table.rowCount()
+            self.ui.activities_table.insertRow(rowPosition)
 
             try:
                 process = psutil.Process(x)
-                self.create_table_widget(rowPosition, 0, str(process.pid), "tableWidget")
-                self.create_table_widget(rowPosition, 1, process.name(), "tableWidget")
-                self.create_table_widget(rowPosition, 2, process.status(), "tableWidget")
-                self.create_table_widget(rowPosition, 3, str(datetime.datetime.utcfromtimestamp(process.create_time()).strftime('%Y-%m-%d %H:%M:%s')),"tableWidget")
+                self.create_table_widget(rowPosition, 0, str(process.pid), "activities_table")
+                self.create_table_widget(rowPosition, 1, str(process.name()), "activities_table")
+                self.create_table_widget(rowPosition, 2, str(process.status()), "activities_table")
+                self.create_table_widget(rowPosition, 3, str(datetime.datetime.utcfromtimestamp(process.create_time()).strftime('%Y-%m-%d %H:%M:%S')),"activities_table")
 
                 self.ui.activitiesSuspend_btn.setText("Suspend")
                 self.ui.activitiesSuspend_btn.setStyleSheet("color: brown")
-                self.ui.tableWidget.setCellWidget(rowPosition, 4, self.ui.activitiesSuspend_btn)
+                self.ui.activities_table.setCellWidget(rowPosition, 4, self.ui.activitiesSuspend_btn)
 
                 self.ui.activitiesResume_btn.setText("Resume")
                 self.ui.activitiesResume_btn.setStyleSheet("color: green")
-                self.ui.tableWidget.setCellWidget(rowPosition, 5, self.ui.activitiesResume_btn)
+                self.ui.activities_table.setCellWidget(rowPosition, 5, self.ui.activitiesResume_btn)
 
                 self.ui.activitiesTerminate_btn.setText("Terminate")
                 self.ui.activitiesTerminate_btn.setStyleSheet("color: orange")
-                self.ui.tableWidget.setCellWidget(rowPosition, 6, self.ui.activitiesTerminate_btn)
+                self.ui.activities_table.setCellWidget(rowPosition, 6, self.ui.activitiesTerminate_btn)
 
                 self.ui.activitiesKill_btn.setText("Kill")
                 self.ui.activitiesKill_btn.setStyleSheet("color: red")
-                self.ui.tableWidget.setCellWidget(rowPosition, 7, self.ui.activitiesTerminate_btn)
+                self.ui.activities_table.setCellWidget(rowPosition, 7, self.ui.activitiesKill_btn)
 
             except Exception as e:
                 print(e)
 
-        # self.ui.activties_lineEdit.changeEvent().connect(self.findName)
+        self.ui.activties_lineEdit.textChanged.connect(self.findName)
 
+    def findName(self):
+        name = self.ui.activties_lineEdit.text().lower()
+        for row in range(self.ui.activities_table.rowCount()):
+            item = self.ui.activities_table.item(row,1)
+            self.ui.activities_table.setRowHidden(row, name not in item.text().lower())
 
+    def create_table_widget(self, rowPosition, columnPosition, text, tableName):
+        qtableWidgetitem = QTableWidgetItem()
+        getattr(self.ui, tableName).setItem(rowPosition, columnPosition, qtableWidgetitem)
+        qtableWidgetitem = getattr(self.ui, tableName).item(rowPosition, columnPosition)
 
-
-
-
+        qtableWidgetitem.setText(text)
 
     def system_info(self):
         time = datetime.datetime.now().strftime("%I:%M:%S %p")
@@ -190,12 +197,6 @@ class MainWindow(QMainWindow):
         self.ui.ramMonitor_widget.spb_lineStyle((('SolidLine'),('SolidLine'),('SolidLine'))) # line style
         self.ui.ramMonitor_widget.spb_lineCap((('RoundCap'),('RoundCap'),('RoundCap'))) # line cap
         self.ui.ramMonitor_widget.spb_setPathHidden(True)
-
-
-
-
-
-
 
     def secs2hours(self, secs):
         mm, ss = divmod(secs, 60)
