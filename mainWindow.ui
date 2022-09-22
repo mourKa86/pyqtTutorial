@@ -16,6 +16,19 @@
   <property name="styleSheet">
    <string notr="true">*{
 	border:none;
+}
+
+QProgressBar{
+	background-color:rgb(20,30,43);
+	border-style:none;
+	border-radius:10px;
+	text-align:center;
+	color:rgb(255,0,0);
+}
+
+QProgressBar::chucnk{
+	background-color:qlineargradient(spread:pad,x1:0,y1:0,x2:1,y2:0,stop:0 rgba(0,136,255,255),stop:1 rgba(255,255,255,255));
+	border-radius:10px;
 }</string>
   </property>
   <widget class="QWidget" name="centralwidget">
@@ -606,7 +619,7 @@ margin:0;</string>
           <item>
            <widget class="QStackedWidget" name="stackedWidget">
             <property name="currentIndex">
-             <number>3</number>
+             <number>6</number>
             </property>
             <widget class="QWidget" name="cpuMemory_page">
              <layout class="QVBoxLayout" name="verticalLayout_3">
@@ -1550,6 +1563,11 @@ margin:0;</string>
                    </column>
                    <column>
                     <property name="text">
+                     <string>FS TYPE</string>
+                    </property>
+                   </column>
+                   <column>
+                    <property name="text">
                      <string>OPTS</string>
                     </property>
                    </column>
@@ -1565,12 +1583,12 @@ margin:0;</string>
                    </column>
                    <column>
                     <property name="text">
-                     <string>MAX BW</string>
+                     <string>TOTAL STORAGE</string>
                     </property>
                    </column>
                    <column>
                     <property name="text">
-                     <string>TOTAL STORAGE</string>
+                     <string>FREE STORAGE</string>
                     </property>
                    </column>
                    <column>
@@ -1580,7 +1598,7 @@ margin:0;</string>
                    </column>
                    <column>
                     <property name="text">
-                     <string>FREE STORAGE</string>
+                     <string/>
                     </property>
                    </column>
                   </widget>
@@ -1682,9 +1700,9 @@ margin:0;</string>
                  <property name="geometry">
                   <rect>
                    <x>0</x>
-                   <y>0</y>
+                   <y>-358</y>
                    <width>822</width>
-                   <height>568</height>
+                   <height>874</height>
                   </rect>
                  </property>
                  <layout class="QVBoxLayout" name="verticalLayout_30">
@@ -1764,6 +1782,12 @@ margin:0;</string>
                         </item>
                         <item>
                          <widget class="QFrame" name="statsTable_frame">
+                          <property name="minimumSize">
+                           <size>
+                            <width>0</width>
+                            <height>150</height>
+                           </size>
+                          </property>
                           <property name="frameShape">
                            <enum>QFrame::StyledPanel</enum>
                           </property>
@@ -1773,6 +1797,12 @@ margin:0;</string>
                           <layout class="QVBoxLayout" name="verticalLayout_20">
                            <item>
                             <widget class="QTableWidget" name="statsTable">
+                             <property name="sizeIncrement">
+                              <size>
+                               <width>0</width>
+                               <height>150</height>
+                              </size>
+                             </property>
                              <property name="font">
                               <font>
                                <pointsize>10</pointsize>
@@ -1857,6 +1887,12 @@ margin:0;</string>
                           <layout class="QVBoxLayout" name="verticalLayout_22">
                            <item>
                             <widget class="QTableWidget" name="ioTable">
+                             <property name="minimumSize">
+                              <size>
+                               <width>0</width>
+                               <height>150</height>
+                              </size>
+                             </property>
                              <property name="font">
                               <font>
                                <pointsize>10</pointsize>
@@ -1961,6 +1997,12 @@ margin:0;</string>
                           <layout class="QVBoxLayout" name="verticalLayout_24">
                            <item>
                             <widget class="QTableWidget" name="networkAddressesTable">
+                             <property name="minimumSize">
+                              <size>
+                               <width>0</width>
+                               <height>150</height>
+                              </size>
+                             </property>
                              <property name="font">
                               <font>
                                <pointsize>10</pointsize>
@@ -2065,6 +2107,12 @@ margin:0;</string>
                           <layout class="QVBoxLayout" name="verticalLayout_28">
                            <item>
                             <widget class="QTableWidget" name="networkConnectionsTable">
+                             <property name="minimumSize">
+                              <size>
+                               <width>0</width>
+                               <height>150</height>
+                              </size>
+                             </property>
                              <property name="font">
                               <font>
                                <pointsize>10</pointsize>
